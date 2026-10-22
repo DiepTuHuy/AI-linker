@@ -1,0 +1,24 @@
+name: "Software Architecture & Code Pipeline"
+type: "sequential"
+task: "Design and implement a rate-limiting middleware in Python."
+
+agents:
+  - name: "Architect"
+    role: "System Designer"
+    model: "mock:claude-3-5-sonnet"
+    system_prompt: "Design clean system specs."
+
+  - name: "Developer"
+    role: "Backend Specialist"
+    model: "mock:deepseek-coder"
+    system_prompt: "Write production-ready code."
+
+  - name: "SecurityAuditor"
+    role: "AppSec Reviewer"
+    model: "mock:gpt-4o"
+    system_prompt: "Check security and edge cases."
+
+order:
+  - "Architect"
+  - "Developer"
+  - "SecurityAuditor"
